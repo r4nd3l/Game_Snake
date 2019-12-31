@@ -49,16 +49,16 @@ document.addEventListener("keydown", direction);
 
 function direction(event){
   let key = event.keyCode;
-  if(key == 37 || key == 65 && d != "right"){
+  if(key == 37 && d != "right"){
     left.play();
     d = "left";
-  }else if(key == 38 || key == 87 && d != "down"){
+  }else if(key == 38 && d != "down"){
     down.play();
     d = "up";
-  }else if(key == 39 || key == 68 && d != "left"){
+  }else if(key == 39 && d != "left"){
     right.play();
     d = "right";
-  }else if(key == 40 || key == 83 && d != "up"){
+  }else if(key == 40 && d != "up"){
     down.play();
     d = "down";
   }
@@ -82,7 +82,7 @@ function draw(){
     ctx.fillStyle = (i == 0)? "green" : "white";
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
 
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = "green";
     ctx.strokeRect(snake[i].x, snake[i].y, box, box);
   }
   ctx.drawImage(foodImg, food.x, food.y);
@@ -118,7 +118,7 @@ function draw(){
   }
 
   // game over
-  if(snakeX < 0 || snakeX > 18*box || snakeY < 2*box || snakeY > 18*box || collision(newHead, snake)){
+  if(snakeX < box || snakeX > 17*box || snakeY < 3*box || snakeY > 17*box || collision(newHead, snake)){
     clearInterval(game);
     dead.play();
   }
@@ -126,10 +126,8 @@ function draw(){
   snake.unshift(newHead);
 
   ctx.fillStyle = "white";
-  ctx.font = "45px Verdana";
-  ctx.fillText(score, 2*box, 1.5*box);
-  ctx.strokeStyle = "red";
-  ctx.strokeRect(0, 0, 19*box, 2*box);
+  ctx.font = "45px Arial";
+  ctx.fillText(score, 2*box, 1.6*box);
 }
 
 // call draw function every 100 ms

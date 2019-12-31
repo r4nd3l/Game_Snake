@@ -1,11 +1,5 @@
 /* Default DevCorner Style Setting */
 
-/* Fonts */
-@font-face {
-    font-family: 'retro_computer_personal_use'; /*a name to be used later*/
-    src: url('../font/retro_computer_personal_use.ttf'); /*URL to font*/
-}
-
 :root{
   --dc-: #28a745; /* #28a745 */
   --rgba-dc-: rgba(40, 167, 69, 0.5);
@@ -32,13 +26,10 @@ html {
   background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
 body{
-  overflow-y: scroll;
   height: 100vh;
-  margin: 0;
+  margin: 5vh auto;
   padding: 0;
-}
-canvas{
-  border: 1px solid red;
+  text-align: center;
 }
 
 
