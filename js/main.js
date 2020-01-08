@@ -52,15 +52,47 @@ function direction(event){
   if(key == 37 && d != "right"){
     left.play();
     d = "left";
+    document.getElementsByTagName("kbd")[1].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[1].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
   }else if(key == 38 && d != "down"){
     down.play();
     d = "up";
+    document.getElementsByTagName("kbd")[0].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[0].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
   }else if(key == 39 && d != "left"){
     right.play();
     d = "right";
+    document.getElementsByTagName("kbd")[3].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[3].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
   }else if(key == 40 && d != "up"){
     down.play();
     d = "down";
+    document.getElementsByTagName("kbd")[2].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[2].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
+  }
+}
+
+document.addEventListener("keyup", button_up);
+
+function button_up(event){
+  let key = event.keyCode;
+
+  if(key == 38){
+    console.log("up_back");
+    document.getElementsByTagName("kbd")[0].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[0].style.cssText = "box-shadow: none; text-shadow: none;"
+  }else if(key == 37){
+    console.log("left_back");
+    document.getElementsByTagName("kbd")[1].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[1].style.cssText = "box-shadow: none; text-shadow: none;"
+  }else if(key == 40){
+    console.log("down_back");
+    document.getElementsByTagName("kbd")[2].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[2].style.cssText = "box-shadow: none; text-shadow: none;"
+  }else if(key == 39){
+    console.log("right_back");
+    document.getElementsByTagName("kbd")[3].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[3].style.cssText = "box-shadow: none; text-shadow: none;"
   }
 }
 
